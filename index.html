@@ -3,23 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Image Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <h1>Snapshots</h1>
     <ul>
       <li>
-        <a href="images/eye.jpg" title="an eye">eye</a>
+        <a href="images/eye.jpg" title="an eye" onclick="showPic(this); return false;">eye</a>
       </li>
       <li>
-        <a href="images/snowMountain.jpg" title="a snowMountain">snowMountain</a>
+        <a href="images/snowMountain.jpg" title="a snowMountain" onclick="showPic(this); return false;">snowMountain</a>
       </li>
       <li>
-        <a href="images/sunset.jpg" title="beautiful sunset">sunset</a>
+        <!-- return false can stop the default behavior of a tag-->
+        <a href="images/sunset.jpg" title="beautiful sunset" onclick="showPic(this); return false;">sunset</a>
       </li>
       <li>
-        <a href="images/cloud.jpg" title="clouds">cloud</a>
+        <a href="images/cloud.jpg" title="clouds" onclick="showPic(this); return false;">cloud</a>
       </li>
     </ul>
-
+    <img id="placeholder" title="this is a placeholder" src="images/placeholder.jpg" onclick="showPic(this); return false;" alt="my images gallery">
+    <p id="description">This is description</p>
   </body>
+  <script type="text/javascript" src="javascript/showPic.js"></script>
 </html>
