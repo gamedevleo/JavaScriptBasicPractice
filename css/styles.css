@@ -24,6 +24,19 @@ li{
 }
 img{
   display: block;
-  max-height:200px;
+  max-height:500px;
   clear: both;
+}
+
+
+#image_gallery{
+  list-style: none;
+}
+
+#image_gallery li {
+  display: inline;
+}
+
+#image_gallery li a img{
+  border:0;
 }
