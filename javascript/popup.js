@@ -1,5 +1,3 @@
-window.onload = prepareLinks;
-
 function popUp(winUrl){
   window.open (winUrl, 'new', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
 }
