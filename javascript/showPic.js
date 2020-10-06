@@ -1,5 +1,6 @@
 addLoadEvent(prepareGallery);
-addLoadEvent(prepareLinks)
+addLoadEvent(prepareLinks);
+addLoadEvent(preparePlaceholder);
 
 
 function addLoadEvent(func){      //addLoadEvent function can add more than one function to onload if necessary
@@ -33,6 +34,34 @@ function prepareGallery(){
                                       //if showPic failed     return true to open the link in a new window
     }
   }
+}
+function insertAfter(newElement,targetElement){
+  var parent = targetElement.parentNode;
+  if(parent.lastChild == targetElement)
+  {
+    parent.appendChild(newElement);
+  }
+  else{
+    parent.insertBefore(newElement,targetElement.nextSibling);
+  }
+}
+function preparePlaceholder(){
+  if(!document.createElement) return false;
+  if(!document.createNextNode) return false;
+  if(!document.getElementById) return false;
+  if(!document.getElementById('image_gallery')) return false;
+
+  var placeholder = document.createElement('img');
+  placeholder.setAttribute('id','placeholder');
+  placeholder.setAttribute('src','./images/placeholder.jpg');
+  placeholder.setAttribute('alt','This is placeholder.');
+  var descriptionPara = document.createElement('p');
+  descriptionPara.setAttribute('id','description');
+  var descriptionText = document.createTextNode("This is a description");
+  descriptionPara.appendChild(descriptionText);
+  var gallery = document.getElementById('image_gallery');
+  insertAfter(placeholder,gallery);
+  insertAfter(descriptionPara,placeholder);
 }
 
 function showPic(whichPic)
